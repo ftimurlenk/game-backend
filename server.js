@@ -9,14 +9,10 @@ dotenv.config();
 const mongoURI = process.env.MONGO_URI;
 const app = express();
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Sunucu ${PORT} portunda çalışıyor`);
-});
-
 
 // Middleware
 app.use(cors({
-  origin: '*',  // Frontend URL'si, ihtiyaca göre değiştirilebilir
+  origin: '*',  // Geliştirme aşamasında sorun çıkmaz, prod ortamda frontend URL'si yazılması daha güvenli
   credentials: true,
 }));
 app.use(express.json());
@@ -34,7 +30,7 @@ app.get('/', (req, res) => {
   res.send('2048 Game Backend Çalışıyor!');
 });
 
-// Sunucuyu başlat
+// Sunucuyu başlat (burada sadece bir kez olmalı)
 app.listen(PORT, () => {
   console.log(`Sunucu ${PORT} portunda çalışıyor`);
 });
