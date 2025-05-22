@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: '*',  // Geliştirme aşamasında sorun çıkmaz, prod ortamda frontend URL'si yazılması daha güvenli
+  origin: 'https://somnia2048.vercel.app',  // Geliştirme aşamasında sorun çıkmaz, prod ortamda frontend URL'si yazılması daha güvenli
   credentials: true,
 }));
 app.use(express.json());
