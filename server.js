@@ -9,6 +9,10 @@ dotenv.config();
 const mongoURI = process.env.MONGO_URI;
 const app = express();
 const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Sunucu ${PORT} portunda çalışıyor`);
+});
+
 
 // Middleware
 app.use(cors({
